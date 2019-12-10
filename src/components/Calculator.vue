@@ -2,41 +2,45 @@
     <div class="grid-container">
         <Display />
         
-        <Button text="AC" color="black" background="lightgray" />
-        <Button text="+/-" color="black" background="lightgray" />
-        <Button text="%" color="black" background="lightgray" />
-        <Button text="/" background="darkorange" />
+        <FunctionButton text="AC"/>
+        <FunctionButton text="+/-" />
+        <FunctionButton text="%" />
+        <OperatorButton text="/" />
 
         <Button text="7" />
         <Button text="8" />
         <Button text="9" />
-        <Button text="x" background="darkorange" />
+        <OperatorButton text="x"/>
 
         <Button text="4" />
         <Button text="5" />
         <Button text="6" />
-        <Button text="-" background="darkorange" />
+        <OperatorButton text="-" />
 
         <Button text="1" />
         <Button text="2" />
         <Button text="3" />
-        <Button text="+" background="darkorange" />
+        <OperatorButton text="+" />
 
         <Button class="zero-container" text="0" />
         <Button text="." />
-        <Button text="=" background="darkorange" />
+        <OperatorButton text="=" />
     </div>
 </template>
 
 <script>
-import Button from './Button';
+import Button from './buttons/Button';
 import Display from './Display';
+import FunctionButton from './buttons/FunctionButton';
+import OperatorButton from './buttons/OperatorButton';
 
 export default {
     name: "Calculator",
     components: {
         Button,
-        Display
+        Display,
+        FunctionButton,
+        OperatorButton
     }
 }
 </script>
