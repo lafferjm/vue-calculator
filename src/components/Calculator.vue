@@ -46,6 +46,7 @@ export default {
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-template-rows: auto auto auto auto auto auto;
+    border: 1px solid black;
 }
 
 .zero-container {
