@@ -1,6 +1,6 @@
 <template>
     <div class="grid-container">
-        <Results />
+        <Display />
         
         <Button text="AC" color="black" background="lightgray" />
         <Button text="+/-" color="black" background="lightgray" />
@@ -30,13 +30,13 @@
 
 <script>
 import Button from './Button';
-import Results from './Results';
+import Display from './Display';
 
 export default {
     name: "Calculator",
     components: {
         Button,
-        Results
+        Display
     }
 }
 </script>
