@@ -16,7 +16,7 @@ export default {
     background: black;
     color: white;
     text-align: right;
-    font-size: 3em;
+    font-size: 4em;
     padding-right: 2%;
 }
 </style>
