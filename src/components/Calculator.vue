@@ -2,38 +2,40 @@
     <div class="grid-container">
         <Results />
         
-        <div>AC</div>
-        <div>+/-</div>
-        <div>%</div>
-        <div>/</div>
+        <Button text="AC" />
+        <Button text="+/-" />
+        <Button text="%" />
+        <Button text="/" />
 
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-        <div>x</div>
+        <Button text="7" />
+        <Button text="8" />
+        <Button text="9" />
+        <Button text="x" />
 
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>-</div>
+        <Button text="4" />
+        <Button text="5" />
+        <Button text="6" />
+        <Button text="-" />
 
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>+</div>
+        <Button text="1" />
+        <Button text="2" />
+        <Button text="3" />
+        <Button text="+" />
 
-        <div class="zero-container">0</div>
-        <div>.</div>
-        <div>=</div>
+        <Button class="zero-container" text="0" />
+        <Button text="." />
+        <Button text="=" />
     </div>
 </template>
 
 <script>
+import Button from './Button';
 import Results from './Results';
 
 export default {
     name: "Calculator",
     components: {
+        Button,
         Results
     }
 }
