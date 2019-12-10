@@ -1,6 +1,6 @@
 <template>
     <div class="grid-container">
-        <div class="result-container">0</div>
+        <Results />
         
         <div>AC</div>
         <div>+/-</div>
@@ -29,8 +29,13 @@
 </template>
 
 <script>
+import Results from './Results';
+
 export default {
-    name: "Calculator"
+    name: "Calculator",
+    components: {
+        Results
+    }
 }
 </script>
 
@@ -39,10 +44,6 @@ export default {
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-template-rows: auto auto auto auto auto auto;
-}
-
-.result-container {
-    grid-column: 1 / 5;
 }
 
 .zero-container {
