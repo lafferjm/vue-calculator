@@ -23,4 +23,12 @@ export default {
     color: white;
     background-color: gray;
 }
+
+.button-style:active {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.button-style:hover {
+    cursor: pointer;
+}
 </style>
