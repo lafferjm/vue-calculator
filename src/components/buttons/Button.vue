@@ -1,5 +1,5 @@
 <template>
-    <div class="button-style">
+    <div class="button-style" v-on:click="sendClick(text)">
         {{text}}
     </div>
 </template>
@@ -9,6 +9,11 @@ export default {
     name: "Button",
     props: {
         text: String
+    },
+    methods: {
+        sendClick: function(buttonText) {
+            console.log(buttonText);
+        }
     }
 }
 </script>
