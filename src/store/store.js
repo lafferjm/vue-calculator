@@ -5,11 +5,18 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
-        result: 0
+        result: "0",
+        leftSide: "0"
     },
     mutations: {
         increment(state, value) {
-            state.result = state.result + value;
+            if (state.leftSide == 0) {
+                state.leftSide = value.toString();
+            } else {
+                state.leftSide = state.leftSide + value.toString();
+            }
+
+            state.result = state.leftSide;
         }
     },
     getters: {
