@@ -12,7 +12,7 @@ export default {
     },
     methods: {
         sendClick: function(buttonText) {
-            console.log(buttonText);
+            this.$store.commit('increment', Number(buttonText));
         }
     }
 }

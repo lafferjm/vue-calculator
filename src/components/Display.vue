@@ -1,6 +1,6 @@
 <template>
     <div class="results-container">
-        0
+        {{ $store.getters.result }}
     </div>
 </template>
 
