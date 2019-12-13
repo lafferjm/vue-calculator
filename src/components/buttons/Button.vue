@@ -12,7 +12,7 @@ export default {
     },
     methods: {
         sendClick: function(buttonText) {
-            this.$store.commit('increment', Number(buttonText));
+            this.$store.commit('setNumber', buttonText);
         }
     }
 }

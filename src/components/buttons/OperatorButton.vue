@@ -3,7 +3,12 @@ import Button from './Button';
 
 export default {
   name: "OperatorButton",
-  extends: Button
+  extends: Button,
+  methods: {
+    sendClick: function(buttonText) {
+      this.$store.commit('setOperand', buttonText);
+    }
+  }
 }
 </script>
 
