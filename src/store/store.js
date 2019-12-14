@@ -12,21 +12,18 @@ const store = new Vuex.Store({
     },
     mutations: {
         setNumber(state, value) {
-            if (state.rightSide == 0) {
+            if (state.rightSide == "0") {
                 state.rightSide = value;
             } else {
-                if (state.operand != null) {
-                    state.leftSide = state.rightSide;
-                    state.rightSide = value;
-                } else {
-                    state.rightSide = state.rightSide + value;
-                }
+                state.rightSide = state.rightSide + value;
             }
 
             state.result = state.rightSide;
         },
         setOperand(state, value) {
             if (value == "=") {
+                console.log("Left: " + state.leftSide);
+                console.log("Right: " + state.rightSide);
                 if (state.operand == "+") {
                     state.result = Number(state.leftSide) + Number(state.rightSide);
                 } else if (state.operand == "/") {
@@ -41,10 +38,8 @@ const store = new Vuex.Store({
                 state.rightSide = "0";
             } else {
                 state.operand = value;
-                // 100% positive there is a bug here
-                if (state.leftSide == "0" && state.rightSide == "0") {
-                    state.leftSide = state.result;
-                }
+                state.leftSide = state.rightSide;
+                state.rightSide = "0";
             }
         }
     },
