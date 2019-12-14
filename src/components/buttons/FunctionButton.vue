@@ -3,7 +3,12 @@ import Button from './Button';
 
 export default {
   name: "FunctionButton",
-  extends: Button
+  extends: Button,
+  methods: {
+    sendClick: function(buttonText) {
+      this.$store.commit('callFunctional', buttonText);
+    }
+  }
 }
 </script>
 

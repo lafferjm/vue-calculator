@@ -22,8 +22,6 @@ const store = new Vuex.Store({
         },
         setOperand(state, value) {
             if (value == "=") {
-                console.log("Left: " + state.leftSide);
-                console.log("Right: " + state.rightSide);
                 if (state.operand == "+") {
                     state.result = Number(state.leftSide) + Number(state.rightSide);
                 } else if (state.operand == "/") {
@@ -32,12 +30,29 @@ const store = new Vuex.Store({
                     state.result = Number(state.leftSide) * Number(state.rightSide);
                 } else if (state.operand == "-") {
                     state.result = Number(state.leftSide) - Number(state.rightSide);
+                } else if (state.operand == "%") {
+                    state.result = Number(state.leftSide) % Number(state.rightSide);
                 }
 
                 state.leftSide = "0";
                 state.rightSide = "0";
             } else {
                 state.operand = value;
+                state.leftSide = state.rightSide;
+                state.rightSide = "0";
+            }
+        },
+        callFunctional(state, value) {
+            if (value == "AC") {
+                state.result = "0";
+                state.leftSide = "0";
+                state.rightSide = "0";
+                state.operand = null;
+            } else if (value == "+/-") {
+                state.rightSide = (Number(state.rightSide) * -1).toString();
+                state.result = state.rightSide;
+            } else if (value == "%") {
+                state.operand = "%";
                 state.leftSide = state.rightSide;
                 state.rightSide = "0";
             }
