@@ -34,8 +34,9 @@ const store = new Vuex.Store({
                     state.result = Number(state.leftSide) % Number(state.rightSide);
                 }
 
+                state.rightSide = state.result;
+                state.operand = null;
                 state.leftSide = "0";
-                state.rightSide = "0";
             } else {
                 state.operand = value;
                 state.leftSide = state.rightSide;
